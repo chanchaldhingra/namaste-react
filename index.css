@@ -1,3 +1,36 @@
-h1{
-    color: red;
+.tiles-container{
+    display: flex;
+    gap: 10px;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.tile-container {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 230px;
+    max-height: 250px;
+}
+
+.tile-container > *+*{
+    margin-top: 5px;
+}
+
+.tile-image{
+    width: 200px;
+    height: 200px;
+}
+
+.tile-name{
+    color: #004561;
+    text-transform: capitalize;
+}
+
+.tile-rating{
+    color: black;
 }
