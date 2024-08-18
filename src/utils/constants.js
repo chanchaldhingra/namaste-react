@@ -1,0 +1,1 @@
+export const IMG_URL = 'https://www.pixelstalk.net/wp-content/uploads/2016/08/Fresh-hot-delicious-food-wallpaper.jpg';

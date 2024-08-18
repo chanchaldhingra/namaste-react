@@ -1,29 +1,7 @@
-import TileComp from './Tile';
+import {TileComp} from './Tile';
+import {arr} from '../utils/mockData';
 
-const arr = [
-    {
-        id: 1,
-        tileName: 'Roasted Chicken',
-        rating: '4'
-    },
-    {
-        id: 2,
-        tileName: 'Salad',
-        rating: '3'
-    },
-    {
-        id: 3,
-        tileName: 'Chinese',
-        rating: '2'
-    },
-    {
-        id: 4,
-        tileName: 'Punjabi',
-        rating: '1'
-    }
-];
-
-const TilesComp = () => (
+export const TilesComp = () => (
     <div className='tiles-container'>
         {
             arr.map(tileObj => <TileComp key={tileObj.id} resData={tileObj} />)
@@ -31,5 +9,3 @@ const TilesComp = () => (
         
     </div>
 );
-
-export default TilesComp;
