@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import TilesComp from './components/Tiles';
+import BodyComp from './components/Body';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<TilesComp />);
+
+root.render(<BodyComp />);
