@@ -34,6 +34,15 @@
     box-sizing: border-box;
 }
 
+.res-card > * {
+    word-wrap: break-word;
+}
+
+.res-card img {
+    width: 180px;
+    height: 180px;
+}
+
 .res-card:hover{
     cursor: pointer;
     border: 1px solid black;
@@ -53,7 +62,39 @@
     width: 100%;
 }
 
-.filter-btn{
+.filter-btn, .search-btn{
     margin: 10px 0;
     padding: 5px;
+}
+
+.shimmer-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.shimmer-cards{
+    width: 200px;
+    height: 350px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.login-btn{
+    padding: 10px;
+    min-width: 80px;
+}
+
+.filter {
+    display : flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box > *+*{
+    margin-left:10px;
 }
