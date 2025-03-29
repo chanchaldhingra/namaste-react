@@ -16,7 +16,6 @@ const RestaurantMenu = () => {
     const fetchData = async () => {
         const data = await fetch(menuUrl+resId);
         const json = await data.json();
-        console.log("json ", json);
         setResData(json.data);
     };
 
@@ -28,9 +27,6 @@ const RestaurantMenu = () => {
     .filter(item => 
         item?.card?.card?.title && item?.card?.card?.itemCards
     )
-
-    console.log("itemGroup ", itemGroups);
-
 
     return (
         <div className="Menu">
