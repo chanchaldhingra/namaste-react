@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router";
@@ -21,6 +21,8 @@ const Body = () => {
         setFilteredRestaurant(restaurantList);
     };
 
+    const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+
     return listOfRestaurant.length===0 ? (<Shimmer />) : (
         <div className="body">
             <div className="flex items-center my-3">
@@ -42,7 +44,11 @@ const Body = () => {
             </div>
             <div className="flex items-center gap-2.5 flex-wrap">
                 {
-                    filteredRestaurant.map(restaurant => <Link key={restaurant.id} to={"/restaurant/"+restaurant.id}><RestaurantCard key={restaurant.id} resName = {restaurant} /></Link>)
+                    filteredRestaurant.map(restaurant => <Link key={restaurant.id} to={"/restaurant/"+restaurant.id}>
+                        
+                        {restaurant.promoted ? <PromotedRestaurantCard resName = {restaurant} /> : <RestaurantCard resName = {restaurant} />}
+
+                    </Link>)
                 }
             </div>
         </div>

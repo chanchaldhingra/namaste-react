@@ -8,15 +8,20 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from './components/Cart';
 
 const Grocery = lazy(()=> import('./components/Grocery'));
 
 const AppLayout = () => {
     return (
-        <div className="app">
-            <Header />
-            <Outlet />
-        </div>
+        <Provider store={appStore}>
+            <div className="app">
+                <Header />
+                <Outlet />
+            </div>
+        </Provider>
     );
 };
 
@@ -46,6 +51,10 @@ const appRouter = createBrowserRouter([
                 path: '/grocery',
                 element: (<Suspense fallback={<Shimmer />}><Grocery /></Suspense>)
                 
+            },
+            {
+                path: '/cart',
+                Component: Cart
             }
         ]
     }
